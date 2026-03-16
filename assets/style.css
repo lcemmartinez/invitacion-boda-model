@@ -1,0 +1,145 @@
+:root {
+    --pastel-pink: #fce4ec;
+    --pastel-blue: #e3f2fd;
+    --gold: #d4af37;
+    --text: #5d4037;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+.font-cursive {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--gold);
+}
+
+/* EFECTO PARALLAX */
+.parallax-hero {
+    height: 100vh;
+    background-image: url('/assets/img/img1.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+/* SECCIONES */
+section { padding: 100px 20px; text-align: center; }
+.section-pastel { background-color: var(--pastel-pink);
+background-image: url('/assets/img/fondo_rosa.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+.section-white { background-color: #ffffff; }
+
+/* CARDS CON MOVIMIENTO */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Pequeño movimiento al pasar el mouse */
+}
+
+.shadow { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+/* GRID DE GALERÍA */
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.photo {
+    width: 250px;
+    height: 350px;
+    background-size: cover;
+    border: 5px solid white;
+}
+
+/* FORMULARIO */
+.form-card input, .form-card select, .form-card textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid var(--pastel-pink);
+    border-radius: 5px;
+}
+
+button {
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--gold); /* El color dorado que definimos */
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.contador span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 60px;
+    display: inline-block;
+}
+
+.mensaje-texto {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text);
+    padding: 20px 0;
+}
+
+.mensaje-texto p {
+    margin: 5px 0;
+}
+
+.icon-floral {
+    color: var(--gold);
+    font-size: 1.5rem;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Opcional: Si quieres que esta card sea un poco más ancha que las otras */
+.card.shadow {
+    max-width: 600px; /* Un poco más de espacio para la frase */
+}

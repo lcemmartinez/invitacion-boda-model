@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda - Invitación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="parallax-hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="font-cursive">Marisa & Daniel</h1>
+            <p class="frase">"Por encima de todo, vístanse de amor, que es el vínculo perfecto."</p>
+            <div id="countdown" class="contador"></div>
+        </div>
+    </header>
+
+    <section class="section-pastel">
+    <div class="card shadow" data-aos="zoom-in">
+        <span class="icon-floral">❀</span>
+        <h2 class="font-cursive">Nuestra Invitación</h2>
+        <div class="mensaje-texto">
+            <p>Con la bendición de Dios y de nuestros padres,</p>
+            <p>tenemos el honor de invitarlos a celebrar</p>
+            <p>el inicio de nuestra nueva vida juntos.</p>
+            <br>
+            <p><strong>¡Su presencia es nuestro mejor regalo!</strong></p>
+        </div>
+        <span class="icon-floral">❀</span>
+    </div>
+</section>
+
+    <section class="section-pastel">
+        <div class="card" data-aos="zoom-in">
+            <h2 class="font-cursive">Nuestra Fecha</h2>
+            <p>29 de Noviembre de 2026</p>
+        </div>
+
+    </section>
+
+    <section class="section-white">
+        <div class="container-flex">
+            <div class="card" data-aos="fade-right">
+                <h3 class="font-cursive">Padres de la Novia</h3>
+                <p>Nombre del Padre<br>Nombre de la Madre</p>
+            </div>
+            <div class="card" data-aos="fade-left">
+                <h3 class="font-cursive">Padres del Novio</h3>
+                <p>Nombre del Padre<br>Nombre de la Madre</p>
+            </div>
+        </div>
+        <div class="card mt-20" data-aos="fade-up">
+            <h3 class="font-cursive">Padrinos</h3>
+            <p>Nombre del Padrino & Nombre de la Madrina</p>
+        </div>
+    </section>
+
+    <section class="section-pastel">
+        <h2 class="font-cursive">Nuestra Historia</h2>
+        <div class="gallery-grid">
+            <div class="photo" data-aos="flip-left" style="background-image: url('/assets/img/fashion-couple-black-dress-suit-outdoor.jpg')"></div>
+            <div class="photo" data-aos="flip-left" data-aos-delay="100" style="background-image: url('/assets/img/happy-groom-holding-bride-countryside.jpg')"></div>
+            <div class="photo" data-aos="flip-left" data-aos-delay="200" style="background-image: url('/assets/img/happy-married-couple-celebrating-relationship-anniversary-building-rooftop.jpg')"></div>
+        </div>
+    </section>
+
+    <section class="section-white">
+        <div class="container-flex">
+            <div class="card shadow" data-aos="fade-up">
+                <span class="icon">⛪</span>
+                <h3 class="font-cursive">Misa</h3>
+                <p>16:00 hrs - Parroquia Central</p>
+                <a href="#" class="btn">Ver Mapa</a>
+            </div>
+           
+            <div class="card shadow" data-aos="fade-up" data-aos-delay="200">
+                <span class="icon">🥂</span>
+                <h3 class="font-cursive">Recepción</h3>
+                <p>19:00 hrs - Jardín de Eventos</p>
+                <a href="#" class="btn">Ver Mapa</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pastel">
+        <div class="card" data-aos="zoom-in">
+            <h3 class="font-cursive">Código de Vestimenta</h3>
+            <p>Formal - Colores Pastel</p>
+        </div>
+        <div class="card mt-20" data-aos="zoom-in">
+            <h3 class="font-cursive">Mesa de Regalos</h3>
+            <p>Liverpool • Amazon</p>
+        </div>
+    </section>
+
+    <section class="section-white">
+        <div class="card shadow form-card" data-aos="fade-up">
+            <h2 class="font-cursive">Confirmar Asistencia</h2>
+            <form id="rsvp-form">
+                <input type="text" id="nombre" placeholder="Nombre completo" required>
+                <select id="asistencia">
+                    <option value="Si">Sí, asistiré</option>
+                    <option value="No">No podré asistir</option>
+                </select>
+                <textarea id="mensaje" placeholder="Mensaje para los novios"></textarea>
+                <button type="submit" id="submit-btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
