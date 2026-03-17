@@ -3,6 +3,7 @@
     --pastel-blue: #e3f2fd;
     --gold: #d4af37;
     --text: #5d4037;
+    --white: #ffffff;
 }
 
 body {
@@ -10,16 +11,17 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: var(--text);
     overflow-x: hidden;
+    background-color: var(--white);
 }
 
 .font-cursive {
     font-family: 'Great Vibes', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 3.5rem;
     color: var(--gold);
 }
 
-/* EFECTO PARALLAX */
+/* --- EFECTO PARALLAX --- */
 .parallax-hero {
     height: 100vh;
     background-image: url('/assets/img/img1.webp');
@@ -31,154 +33,68 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
 }
 
 .hero-content {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
     padding: 40px;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* SECCIONES */
-section { padding: 100px 20px; text-align: center; }
-.section-pastel { background-color: var(--pastel-pink);
-background-image: url('/assets/img/fondo_rosa.webp');
+/* --- SECCIONES CON FONDO FIJO --- */
+section { 
+    padding: 80px 20px; 
+    text-align: center; 
+}
+
+.section-pastel { 
+    background-color: var(--pastel-pink);
+    background-image: url('/assets/img/fondo_rosa.webp');
     background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
-   }
+}
+
 .section-white {
     background-image: url('/assets/img/fondo_blanco.webp');
     background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
-    background-color: #ffffff; }
+    background-color: var(--white); 
+}
 
-/* CARDS CON MOVIMIENTO */
+/* --- CARDS (CORREGIDAS) --- */
 .card {
-.card {
-    background-color: #ffffff; /* Fondo blanco para que el pastel resalte */
-    border-radius: 15px;       /* Bordes redondeados elegantes */
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 500px;
-    
-    /* El Sombreado Difuminado (Box Shadow) */
+    background-color: var(--white) !important;
+    border-radius: 15px;
+    padding: 35px;
+    margin: 25px auto;
+    max-width: 550px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
-    
-    /* Suavizado para la animación */
-    transition: all 0.3s ease-in-out;
-}
-
-/* Efecto al pasar el mouse (Hover) */
-.card:hover {
-    transform: translateY(-5px); /* Se eleva un poco */
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12); /* La sombra se vuelve más profunda */
-}
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2; /* Para que quede sobre la línea del tiempo */
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Pequeño movimiento al pasar el mouse */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
 }
 
-.shadow { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-
-/* GRID DE GALERÍA */
-.gallery-grid {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.photo {
-    width: 250px;
-    height: 350px;
-    background-size: cover;
-    border: 5px solid white;
-}
-
-/* FORMULARIO */
-.form-card input, .form-card select, .form-card textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    border: 1px solid var(--pastel-pink);
-    border-radius: 5px;
-}
-
-button {
-    background: var(--gold);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.contador {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--gold); /* El color dorado que definimos */
-    margin-top: 20px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.contador span {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 10px;
-    border-radius: 8px;
-    min-width: 60px;
-    display: inline-block;
-}
-
-.mensaje-texto {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text);
-    padding: 20px 0;
-}
-
-.mensaje-texto p {
-    margin: 5px 0;
-}
-
-.icon-floral {
-    color: var(--gold);
-    font-size: 1.5rem;
-    display: block;
-    margin: 10px 0;
-}
-
-/* Opcional: Si quieres que esta card sea un poco más ancha que las otras */
-.card.shadow {
-    max-width: 600px; /* Un poco más de espacio para la frase */
-}
-
-/* Contenedor General */
+/* --- ITINERARIO / TIMELINE --- */
 .itinerario {
-    padding: 60px 20px;
+    padding: 60px 10px;
     background-color: #fdfaf6;
-    overflow: hidden; /* Evita que las animaciones AOS muevan la pantalla */
+    overflow: hidden;
 }
 
 .timeline {
     position: relative;
     max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 0;
+    margin: 40px auto;
+    padding: 20px 0;
 }
 
-/* La Línea Dorada Central */
 .timeline::after {
     content: '';
     position: absolute;
@@ -188,80 +104,97 @@ button {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
 }
 
-/* Contenedor de cada ítem */
 .timeline-item {
-    padding: 20px 40px;
+    padding: 10px 40px;
     position: relative;
-    background-color: inherit;
     width: 50%;
     box-sizing: border-box;
 }
 
-/* Posicionamiento Lados */
-.timeline-item.left { left: 0; }
-.timeline-item.right { left: 50%; }
+.timeline-item.left { left: 0; text-align: right; }
+.timeline-item.right { left: 50%; text-align: left; }
 
-/* EL PUNTO BRILLANTE (Asegúrate de que el z-index sea alto) */
+/* NODO / PUNTO BRILLANTE */
 .timeline-item::after {
     content: '';
     position: absolute;
-    width: 18px;
-    height: 18px;
-    right: -9px; /* Centrado en la línea */
+    width: 16px;
+    height: 16px;
     background-color: white;
     border: 3px solid var(--gold);
-    top: 40px;
+    top: 45px;
     border-radius: 50%;
     z-index: 5;
     box-shadow: 0 0 10px var(--gold);
 }
 
-.timeline-item.right::after {
-    left: -9px;
+.timeline-item.left::after { right: -11px; }
+.timeline-item.right::after { left: -11px; }
+
+/* --- CONTADOR --- */
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
 }
 
-/* DISEÑO DE LA CARD (Asegúrate de que tenga fondo blanco) */
-.timeline-item .card {
-    padding: 20px;
-    background: white; /* Si no pones esto, se ven transparentes */
-    position: relative;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* El difuminado que querías */
-    text-align: center;
+.contador span {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 12px;
+    min-width: 70px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--gold);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* AJUSTE PARA MÓVILES (Crucial para que no desaparezcan) */
-@media screen and (max-width: 600px) {
-    .timeline::after { left: 20px; } /* Mueve la línea a la izquierda */
+/* --- GALERÍA --- */
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.photo {
+    width: 260px;
+    height: 360px;
+    background-size: cover;
+    background-position: center;
+    border: 8px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.photo:hover { transform: scale(1.05); }
+
+/* --- RESPONSIVE (MÓVIL) --- */
+@media screen and (max-width: 768px) {
+    .font-cursive { font-size: 2.5rem; }
+    
+    .timeline::after { left: 30px; }
     
     .timeline-item {
         width: 100%;
-        padding-left: 50px;
+        padding-left: 60px;
         padding-right: 20px;
         left: 0 !important;
+        text-align: left !important;
     }
 
     .timeline-item::after {
-        left: 11px !important; /* Punto sobre la línea en móvil */
+        left: 21px !important;
     }
-}
-.hora {
-    font-weight: bold;
-    color: var(--gold);
-    margin: 10px 0;
-}
-
-.icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* Ajuste para móviles */
-@media screen and (max-width: 600px) {
-    .timeline::after { left: 31px; }
-    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; }
-    .timeline-item:nth-child(even) { left: 0%; }
+    
+    .contador span {
+        min-width: 50px;
+        font-size: 1.2rem;
+        padding: 10px;
+    }
 }
