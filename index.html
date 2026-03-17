@@ -73,7 +73,28 @@
         </div>
     </div>
 </section>
+<section class="section-white">
+    <div class="gallery-grid">
+        <div class="card shadow" data-aos="fade-up">
+            <div class="icon-floral">👔</div> <h2 class="font-cursive" style="font-size: 2rem;">Código de Vestimenta</h2>
+            <p class="mensaje-texto">
+                <strong>Formal</strong><br>
+                Hombres: Traje oscuro.<br>
+                Mujeres: Vestido largo.
+            </p>
+        </div>
 
+        <div class="card shadow" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-floral">🎁</div>
+            <h2 class="font-cursive" style="font-size: 2rem;">Mesa de Regalos</h2>
+            <p class="mensaje-texto">
+                Vuestra presencia es nuestro mejor regalo, pero si desean tener un detalle con nosotros:
+            </p>
+            <button onclick="window.open('URL_LIVERPOOL')">Liverpool: 5043221</button>
+            <button onclick="window.open('URL_AMAZON')" style="margin-top: 10px;">Amazon</button>
+        </div>
+    </div>
+</section>
     <section class="section-pastel">
         <div class="card" data-aos="zoom-in">
             <h2 class="font-cursive">Nuestra Fecha</h2>
@@ -136,6 +157,24 @@
             <p>Liverpool • Amazon</p>
         </div>
     </section>
+    <button onclick="openModal()" class="btn-regalo">Lluvia de Sobres</button>
+
+<div id="modalRegalo" class="modal">
+    <div class="modal-content card shadow">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="icon-floral">✉️</div>
+        <h2 class="font-cursive" style="font-size: 2rem;">Lluvia de Sobres</h2>
+        <p class="mensaje-texto">
+            Vuestra presencia es nuestro mayor regalo, pero si desean tener un detalle con nosotros, pueden hacerlo a través de:
+        </p>
+        <div class="datos-bancarios">
+            <p><strong>Banco:</strong> BBVA</p>
+            <p><strong>Titular:</strong> Daniel y Marisa</p>
+            <p><strong>CLABE:</strong> 0123 4567 8901 2345 67</p>
+        </div>
+        <button onclick="copyClabe()" class="btn-copy">Copiar CLABE</button>
+    </div>
+</div>
 
     <section class="section-white">
         <div class="card shadow form-card" data-aos="fade-up">

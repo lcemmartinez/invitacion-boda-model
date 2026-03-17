@@ -56,3 +56,28 @@ form.addEventListener('submit', e => {
     })
     .catch(error => console.error('Error!', error.message));
 });
+
+const modal = document.getElementById("modalRegalo");
+
+function openModal() {
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// Cerrar si hacen clic fuera de la caja blanca
+window.onclick = function(event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+// Función para copiar la CLABE al portapapeles
+function copyClabe() {
+    const clabe = "0123 4567 8901 2345 67"; // Pon aquí la real
+    navigator.clipboard.writeText(clabe).then(() => {
+        alert("CLABE copiada al portapapeles");
+    });
+}
