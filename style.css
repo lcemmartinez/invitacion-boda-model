@@ -43,7 +43,7 @@ body {
 /* SECCIONES */
 section { padding: 100px 20px; text-align: center; }
 .section-pastel { background-color: var(--pastel-pink);
-background-image: url('/assets/img/fondo_rosa.jpg');
+background-image: url('/assets/img/fondo_rosa.webp');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
