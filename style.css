@@ -272,3 +272,46 @@ section {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+button, .btn-regalo, .btn-copy {
+    background: linear-gradient(135deg, var(--gold) 0%, #b38f2d 100%);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px; /* Bordes totalmente redondeados (Pill shape) */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+    display: inline-block;
+    outline: none;
+    margin: 10px 5px;
+}
+
+/* Efecto Hover (al pasar el mouse o tocar en el cel) */
+button:hover, .btn-regalo:hover {
+    transform: translateY(-3px); /* Se eleva */
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Efecto Active (cuando se presiona) */
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+}
+
+.btn-confirmar {
+    background: #5d4037; /* El café de tu paleta --text */
+    border: 2px solid var(--gold);
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
