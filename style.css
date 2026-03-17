@@ -163,3 +163,89 @@ button {
 .card.shadow {
     max-width: 600px; /* Un poco más de espacio para la frase */
 }
+
+.itinerario {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fdfaf6; /* Un tono crema muy suave */
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+/* La línea central */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--gold); /* El color dorado que definimos */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* El punto o nodo en la línea */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 3px solid var(--gold); /* El dorado de tu paleta */
+    border-radius: 50%;
+    top: 20px;
+    z-index: 1;
+    /* Efecto de resplandor (Glow) */
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); 
+}
+
+/* Posición para los elementos de la izquierda (impares) */
+.timeline-item:nth-child(odd)::before {
+    right: -11px;
+}
+
+/* Posición para los elementos de la derecha (pares) */
+.timeline-item:nth-child(even)::before {
+    left: -11px;
+}
+
+/* Ajuste para celulares (cuando la línea se mueve a la izquierda) */
+@media screen and (max-width: 600px) {
+    .timeline-item::before {
+        left: 22px !important;
+    }
+}
+
+/* Alternar lados (Izquierda / Derecha) */
+.timeline-item:nth-child(odd) { left: 0; text-align: right; }
+.timeline-item:nth-child(even) { left: 50%; text-align: left; }
+
+.hora {
+    font-weight: bold;
+    color: var(--gold);
+    margin: 10px 0;
+}
+
+.icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Ajuste para móviles */
+@media screen and (max-width: 600px) {
+    .timeline::after { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; }
+    .timeline-item:nth-child(even) { left: 0%; }
+}
