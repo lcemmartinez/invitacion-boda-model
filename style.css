@@ -164,73 +164,89 @@ button {
     max-width: 600px; /* Un poco más de espacio para la frase */
 }
 
+/* Contenedor General */
 .itinerario {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #fdfaf6; /* Un tono crema muy suave */
+    padding: 60px 20px;
+    background-color: #fdfaf6;
+    overflow: hidden; /* Evita que las animaciones AOS muevan la pantalla */
 }
 
 .timeline {
     position: relative;
-    max-width: 800px;
-    margin: 40px auto;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0;
 }
 
-/* La línea central */
+/* La Línea Dorada Central */
 .timeline::after {
     content: '';
     position: absolute;
     width: 2px;
-    background-color: var(--gold); /* El color dorado que definimos */
+    background-color: var(--gold);
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -1px;
+    transform: translateX(-50%);
 }
 
+/* Contenedor de cada ítem */
 .timeline-item {
-    padding: 10px 40px;
+    padding: 20px 40px;
     position: relative;
+    background-color: inherit;
     width: 50%;
     box-sizing: border-box;
 }
 
-/* El punto o nodo en la línea */
-.timeline-item::before {
+/* Posicionamiento Lados */
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+
+/* EL PUNTO BRILLANTE (Asegúrate de que el z-index sea alto) */
+.timeline-item::after {
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
+    right: -9px; /* Centrado en la línea */
     background-color: white;
-    border: 3px solid var(--gold); /* El dorado de tu paleta */
+    border: 3px solid var(--gold);
+    top: 40px;
     border-radius: 50%;
-    top: 20px;
-    z-index: 1;
-    /* Efecto de resplandor (Glow) */
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); 
+    z-index: 5;
+    box-shadow: 0 0 10px var(--gold);
 }
 
-/* Posición para los elementos de la izquierda (impares) */
-.timeline-item:nth-child(odd)::before {
-    right: -11px;
+.timeline-item.right::after {
+    left: -9px;
 }
 
-/* Posición para los elementos de la derecha (pares) */
-.timeline-item:nth-child(even)::before {
-    left: -11px;
+/* DISEÑO DE LA CARD (Asegúrate de que tenga fondo blanco) */
+.timeline-item .card {
+    padding: 20px;
+    background: white; /* Si no pones esto, se ven transparentes */
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* El difuminado que querías */
+    text-align: center;
 }
 
-/* Ajuste para celulares (cuando la línea se mueve a la izquierda) */
+/* AJUSTE PARA MÓVILES (Crucial para que no desaparezcan) */
 @media screen and (max-width: 600px) {
-    .timeline-item::before {
-        left: 22px !important;
+    .timeline::after { left: 20px; } /* Mueve la línea a la izquierda */
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 20px;
+        left: 0 !important;
+    }
+
+    .timeline-item::after {
+        left: 11px !important; /* Punto sobre la línea en móvil */
     }
 }
-
-/* Alternar lados (Izquierda / Derecha) */
-.timeline-item:nth-child(odd) { left: 0; text-align: right; }
-.timeline-item:nth-child(even) { left: 50%; text-align: left; }
-
 .hora {
     font-weight: bold;
     color: var(--gold);
