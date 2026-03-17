@@ -60,12 +60,25 @@ background-image: url('/assets/img/fondo_rosa.webp');
 
 /* CARDS CON MOVIMIENTO */
 .card {
-    background: white;
+.card {
+    background-color: #ffffff; /* Fondo blanco para que el pastel resalte */
+    border-radius: 15px;       /* Bordes redondeados elegantes */
     padding: 30px;
-    border-radius: 15px;
+    margin: 20px auto;
     max-width: 500px;
-    margin: 0 auto;
-    transition: transform 0.3s ease;
+    
+    /* El Sombreado Difuminado (Box Shadow) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    
+    /* Suavizado para la animación */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.card:hover {
+    transform: translateY(-5px); /* Se eleva un poco */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12); /* La sombra se vuelve más profunda */
+}
 }
 
 .card:hover {
