@@ -170,20 +170,40 @@
 
 
 
-    <section class="section-white">
-        <div class="card shadow form-card" data-aos="fade-up">
-            <h2 class="font-cursive">Confirmar Asistencia</h2>
-            <form id="rsvp-form">
-                <input type="text" id="nombre" placeholder="Nombre completo" required>
-                <select id="asistencia">
-                    <option value="Si">Sí, asistiré</option>
-                    <option value="No">No podré asistir</option>
+<section class="section-white">
+    <div class="card form-card shadow" data-aos="zoom-in">
+        <h2 class="font-cursive">Confirmar Asistencia</h2>
+        <p class="mensaje-texto">Nos encantaría contar con tu presencia. Por favor, confirma antes del 15 de Mayo.</p>
+        
+        <form id="rsvp-form">
+            <div class="input-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+            </div>
+
+            <div class="input-group">
+                <label for="asistencia">¿Asistirás?</label>
+                <select id="asistencia" name="asistencia">
+                    <option value="si">Sí, con mucho gusto</option>
+                    <option value="no">Lamentablemente no puedo</option>
                 </select>
-                <textarea id="mensaje" placeholder="Mensaje para los novios"></textarea>
-                <button type="submit" id="submit-btn">Enviar</button>
-            </form>
-        </div>
-    </section>
+            </div>
+
+            <div class="input-group">
+                <label for="mensaje">Mensaje para los novios</label>
+                <textarea id="mensaje" name="mensaje" rows="3" placeholder="Opcional..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-confirmar">Enviar Confirmación</button>
+        </form>
+        <div id="mensaje-exito" style="display: none; text-align: center; padding: 20px;">
+    <div class="icon-floral" style="font-size: 4rem;">✨</div>
+    <h3 class="font-cursive" style="font-size: 2rem;">¡Gracias por confirmar!</h3>
+    <p class="mensaje-texto">Tu respuesta ha sido registrada. <br> ¡Nos vemos muy pronto!</p>
+    <button onclick="resetForm()" class="btn-copy">Enviar otra respuesta</button>
+</div>
+    </div>
+</section>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>

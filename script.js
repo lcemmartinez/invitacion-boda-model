@@ -31,40 +31,29 @@ setInterval(updateCountdown, 1000);
 
 // Conexión Google Sheets
 const scriptURL = 'TU_URL_DE_APPS_SCRIPT';
-const form = document.getElementById('rsvp-form');
+const rsvpForm = document.getElementById('rsvp-form');
+const mensajeExito = document.getElementById('mensaje-exito');
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    btn.disabled = true;
-    btn.innerHTML = "Enviando...";
-
-    fetch(scriptURL, { 
-        method: 'POST', 
-        mode: 'no-cors',
-        body: JSON.stringify({
-            nombre: document.getElementById('nombre').value,
-            asistencia: document.getElementById('asistencia').value,
-            mensaje: document.getElementById('mensaje').value
-        })
-    })
-    .then(() => {
-        alert("¡Gracias por confirmar!");
-        form.reset();
-        btn.disabled = false;
-        btn.innerHTML = "Enviar";
-    })
-    .catch(error => console.error('Error!', error.message));
+rsvpForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que la página se recargue
+    
+    // Aquí iría tu lógica de fetch para Google Sheets
+    // Por ahora, simularemos el éxito:
+    
+    rsvpForm.style.opacity = '0'; // Desvanecemos el formulario
+    
+    setTimeout(() => {
+        rsvpForm.style.display = 'none'; // Lo quitamos del flujo
+        mensajeExito.style.display = 'block'; // Mostramos el éxito
+        mensajeExito.classList.add('fade-in-up'); // Animación de entrada
+    }, 500);
 });
 
-const modal = document.getElementById("modalRegalo");
-
-function openModal() {
-    modal.style.display = "block";
-}
-
-function closeModal() {
-    modal.style.display = "none";
+function resetForm() {
+    mensajeExito.style.display = 'none';
+    rsvpForm.style.display = 'block';
+    rsvpForm.style.opacity = '1';
+    rsvpForm.reset();
 }
 
 // Cerrar si hacen clic fuera de la caja blanca

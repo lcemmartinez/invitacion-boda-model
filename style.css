@@ -315,3 +315,66 @@ button:active {
     70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
     100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
+
+/* Estilos del Contenedor del Formulario */
+.form-card {
+    text-align: left; /* Los formularios se leen mejor alineados a la izquierda */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+/* Estilo para Inputs, Selects y Textareas */
+.form-card input, 
+.form-card select, 
+.form-card textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Evita que el padding ensanche el input */
+}
+
+/* Efecto Focus: Cuando el usuario hace clic para escribir */
+.form-card input:focus, 
+.form-card select:focus, 
+.form-card textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+}
+
+/* Personalizar el botón dentro del formulario */
+.btn-confirmar {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
