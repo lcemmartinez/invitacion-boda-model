@@ -58,9 +58,14 @@ section {
 
 .section-white {
     background-image: url('/assets/img/fondo_blanco.webp');
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: var(--white); 
+    background-attachment: fixed; /* Mantiene el efecto elegante al hacer scroll */
+    
+    /* CAMBIOS CLAVE AQUÍ: */
+    background-size: contain;      /* La imagen mantiene su proporción original sin estirarse */
+    background-repeat: no-repeat;  /* Evita que la imagen se repita como mosaico */
+    background-position: left center; /* Alinea la imagen a la izquierda y centrada verticalmente */
+    
+    background-color: var(--white); /* El resto del espacio a la derecha será blanco sólido */
 }
 
 /* --- CARDS (CORREGIDAS) --- */
