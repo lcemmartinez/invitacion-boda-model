@@ -98,3 +98,83 @@ function createPetal() {
 
 // Generar pétalos continuamente
 setInterval(createPetal, 500); // menos carga
+
+const canvas = document.getElementById('petals-canvas');
+const ctx = canvas.getContext('2d');
+
+let petals = [];
+const numPetals = 40;
+
+// Ajustar tamaño del canvas
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Imagen del pétalo
+const petalImg = new Image();
+petalImg.src = '/assets/img/petal.png';
+
+// Clase pétalo
+class Petal {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * -canvas.height;
+        this.size = Math.random() * 20 + 10;
+
+        this.speedY = Math.random() * 1 + 0.5;
+        this.speedX = Math.random() * 1 - 0.5;
+
+        this.rotation = Math.random() * 360;
+        this.rotationSpeed = Math.random() * 2 - 1;
+
+        this.swing = Math.random() * 2; // movimiento lateral suave
+    }
+
+    update() {
+        this.y += this.speedY;
+        this.x += Math.sin(this.y * 0.01) * this.swing;
+
+        this.rotation += this.rotationSpeed;
+
+        // Reaparece arriba cuando sale
+        if (this.y > canvas.height) {
+            this.y = -20;
+            this.x = Math.random() * canvas.width;
+        }
+    }
+
+    draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation * Math.PI / 180);
+
+        ctx.drawImage(petalImg, -this.size / 2, -this.size / 2, this.size, this.size);
+        ctx.globalAlpha = 0.8 + Math.sin(this.y * 0.05) * 0.2;
+        ctx.restore();
+    }
+}
+
+// Crear pétalos
+for (let i = 0; i < numPetals; i++) {
+    petals.push(new Petal());
+}
+
+// Animación
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    petals.forEach(petal => {
+        petal.update();
+        petal.draw();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+// Esperar a que cargue la imagen
+petalImg.onload = () => {
+    animate();
+};
