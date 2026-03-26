@@ -70,3 +70,31 @@ function copyClabe() {
         alert("CLABE copiada al portapapeles");
     });
 }
+
+const container = document.querySelector('.petals-container');
+
+function createPetal() {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+
+    // Posición horizontal aleatoria
+    petal.style.left = Math.random() * 100 + 'vw';
+
+    // Tamaño aleatorio
+    const size = Math.random() * 15 + 10;
+    petal.style.width = size + 'px';
+    petal.style.height = size + 'px';
+
+    // Duración de caída
+    petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+
+    container.appendChild(petal);
+
+    // Eliminar después de caer
+    setTimeout(() => {
+        petal.remove();
+    }, 10000);
+}
+
+// Generar pétalos continuamente
+setInterval(createPetal, 300);
