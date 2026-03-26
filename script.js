@@ -97,4 +97,4 @@ function createPetal() {
 }
 
 // Generar pétalos continuamente
-setInterval(createPetal, 300);
+setInterval(createPetal, 500); // menos carga

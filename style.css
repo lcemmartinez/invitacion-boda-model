@@ -410,6 +410,9 @@ button:active {
     0% {
         transform: translateY(-50px) translateX(0) rotate(0deg);
     }
+    50% {
+        transform: translateY(50vh) translateX(-50px) rotate(180deg);
+    }
     100% {
         transform: translateY(100vh) translateX(100px) rotate(360deg);
     }
